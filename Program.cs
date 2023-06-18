@@ -18,6 +18,10 @@
             Console.WriteLine(" the reversed word sentence is "+reversedword);
             Console.WriteLine("****************************************");
 
+            //string replacedsentence = replacedsentence(input, 'o', 'a');
+
+            Console.WriteLine("The replacment sentence  in words is  " + replaceCharacters(input,'o','a'));//EX4 Input sentece, targit char, replacement char
+            Console.WriteLine("****************************************");
         }
 
 
@@ -73,6 +77,20 @@
             //Join the words back together into a string.
             string reversedSentence = string.Join(" ", wordsArray);
             return reversedSentence;
+
+        }
+
+         public static string replaceCharacters(string sentence, char targetChar, char replacementChar )//EX4
+        {
+            char[] charArray = sentence.ToCharArray();
+            for( int i = 0; i < charArray.Length; i++)
+            {
+                if(charArray[i] == targetChar)
+                {
+                    charArray[i] = replacementChar;
+                }
+            }
+            return new string(charArray);
 
         }
     }
